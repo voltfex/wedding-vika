@@ -12,8 +12,7 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-  background:
-    radial-gradient(circle at 10% 0%, #fde8d7 0%, #f8f0e7 38%, #ede2d7 100%);
+  background: #fff;
   color: var(--text-main);
 }
 
@@ -31,7 +30,7 @@
   padding: 0 0 24px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0;
 }
 
 .invite-section {
@@ -220,6 +219,152 @@
   background: rgba(255, 255, 255, 0.85);
 }
 
+.love-story {
+  padding: 24px 14px 44px;
+  background: #fff;
+  color: #31354f;
+  text-align: center;
+}
+
+.love-story__kids {
+  position: relative;
+  height: 430px;
+  width: min(100%, 390px);
+  margin: 0 auto 8px;
+}
+
+.polaroid {
+  margin: 0;
+  position: absolute;
+}
+
+.polaroid--left {
+  top: 2px;
+  left: 2px;
+  width: 240px;
+  transform: rotate(-1.8deg);
+}
+
+.polaroid--right {
+  top: 152px;
+  right: 0;
+  width: 240px;
+  transform: rotate(1.7deg);
+}
+
+.polaroid__photo-clip {
+  position: absolute;
+  top: 10%;
+  left: 16%;
+  width: 68%;
+  height: 68%;
+  overflow: hidden;
+}
+
+.polaroid__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid__frame {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.love-story__equation {
+  margin: -2px 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-size: clamp(48px, 12vw, 62px);
+  line-height: 0.9;
+  color: #152760;
+}
+
+.love-story__equation span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.love-story__equation img {
+  width: clamp(52px, 12vw, 68px);
+  height: auto;
+}
+
+.love-story__divider {
+  display: block;
+  width: 88px;
+  margin: 18px auto;
+}
+
+.love-story__title-art {
+  display: block;
+  width: min(90%, 252px);
+  margin: 0 auto;
+}
+
+.love-story__descr-art {
+  display: block;
+  width: min(96%, 332px);
+  margin: 16px auto 0;
+}
+
+.love-story__together {
+  margin-top: 6px;
+}
+
+.love-story__together .polaroid {
+  position: relative;
+  margin: 0 auto;
+  width: min(400px, 92vw);
+  max-height: 454px;
+  aspect-ratio: 342 / 454;
+  transform: rotate(1.3deg);
+}
+
+.love-story__together .polaroid__frame {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.love-story__heading {
+  margin: 18px 0 12px;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: #46434a;
+}
+
+.love-story__text {
+  width: min(92%, 336px);
+  margin: 0 auto 12px;
+  font-size: 16px;
+  line-height: 1.15;
+  color: #66656b;
+}
+
+.love-story__date {
+  margin: 14px 0 12px;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 42px;
+  line-height: 0.9;
+  color: #46434a;
+}
+
+.love-story__footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 @media (max-width: 460px) {
   .invite-page {
     padding: 0;
@@ -247,4 +392,26 @@
     bottom: 18px;
   }
 
+  .love-story {
+    padding: 20px 12px 40px;
+  }
+
+  .love-story__kids {
+    height: 410px;
+  }
+
+  .love-story__equation {
+    margin-top: -6px;
+    gap: 8px;
+  }
+
+  .love-story__heading {
+    margin-top: 14px;
+    margin-bottom: 10px;
+  }
+
+
+  .love-story__date {
+    margin-top: 8px;
+  }
 }

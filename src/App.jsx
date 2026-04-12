@@ -1,9 +1,7 @@
 import './App.css'
 import { MobileInvitationFrame } from './components/layout/MobileInvitationFrame'
 import { VideoIntroSection } from './components/sections/VideoIntroSection'
-import { EventDetailsSection } from './components/sections/EventDetailsSection'
-import { TimelineSection } from './components/sections/TimelineSection'
-import { RsvpSection } from './components/sections/RsvpSection'
+import { LoveStorySection } from './components/sections/LoveStorySection'
 import { invitationContent } from './data/invitationContent'
 import introVideoMp4 from './assets/video.mp4'
 import introVideoMov from './assets/video.MOV'
@@ -17,9 +15,7 @@ function App() {
         fallbackVideoSrc={introVideoMov}
         musicSrc={introMusic}
       />
-      <EventDetailsSection event={invitationContent.event} />
-      <TimelineSection schedule={invitationContent.schedule} />
-      <RsvpSection rsvp={invitationContent.rsvp} />
+      <LoveStorySection story={invitationContent.storyBlock} />
     </MobileInvitationFrame>
   )
 }
