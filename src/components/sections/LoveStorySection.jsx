@@ -2,8 +2,8 @@ import frameImg from '../../assets/ramka.png'
 import dividerImg from '../../assets/line.png'
 import vikaImg from '../../assets/vika.jpg'
 import ilyaImg from '../../assets/ilya.jpg'
+import kidsUnderlayImg from '../../assets/v+i.PNG'
 import togetherImg from '../../assets/together.jpg'
-import heartImg from '../../assets/heart.svg'
 import b2TitleImg from '../../assets/b2_title.svg'
 import b2DescrImg from '../../assets/b2_descr.svg'
 
@@ -22,6 +22,12 @@ export function LoveStorySection({ story }) {
   return (
     <section className="love-story" aria-label="История любви">
       <div className="love-story__kids">
+        <img
+          className="love-story__kids-underlay"
+          src={kidsUnderlayImg}
+          alt=""
+          aria-hidden="true"
+        />
         <Polaroid
           className="polaroid--left"
           photoSrc={vikaImg}
@@ -56,10 +62,10 @@ export function LoveStorySection({ story }) {
       </div>
 
       <div className="love-story__footer">
-          <h2 className="love-story__heading">{story.heading}</h2>
-          <p className="love-story__text">{story.primaryText}</p>
-          <p className="love-story__date">{story.dateText}</p>
-          <p className="love-story__text">{story.secondaryText}</p>
+        <h2 className="love-story__heading">{story.heading}</h2>
+        <p className="love-story__text">{story.primaryText}</p>
+        <p className="love-story__date">{story.dateText}</p>
+        <p className="love-story__text">{story.secondaryText}</p>
       </div>
     </section>
   )
