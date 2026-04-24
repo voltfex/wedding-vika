@@ -1,8 +1,35 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export function VideoIntroSection({ videoSrc, fallbackVideoSrc, musicSrc }) {
   const [isActivated, setIsActivated] = useState(false)
   const audioRef = useRef(null)
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const videoElement = videoRef.current
+    if (!videoElement) {
+      return
+    }
+
+    videoElement.defaultMuted = true
+    videoElement.muted = true
+
+    const tryPlayVideo = async () => {
+      try {
+        await videoElement.play()
+      } catch {
+        // Some mobile policies can still block autoplay (e.g. power-saving mode).
+      }
+    }
+
+    void tryPlayVideo()
+
+    videoElement.addEventListener('loadeddata', tryPlayVideo)
+
+    return () => {
+      videoElement.removeEventListener('loadeddata', tryPlayVideo)
+    }
+  }, [])
 
   const handleActivateMusic = async () => {
     if (isActivated) {
@@ -26,6 +53,8 @@ export function VideoIntroSection({ videoSrc, fallbackVideoSrc, musicSrc }) {
   return (
     <section className="video-intro" aria-label="Видеоприглашение">
       <video
+        {...{ 'webkit-playsinline': 'true', 'x5-playsinline': 'true' }}
+        ref={videoRef}
         className="video-intro__media"
         autoPlay
         muted
