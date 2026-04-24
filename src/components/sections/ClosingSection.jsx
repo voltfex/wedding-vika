@@ -8,7 +8,6 @@ export function ClosingSection() {
       <img className="closing-section__heart" src={heartImg} alt="" aria-hidden="true" />
       <img className="closing-section__vector" src={closingVectorImg} alt="" aria-hidden="true" />
       <p className="closing-section__text">С нетерпением ждем вас в наш особенный день.</p>
-      <img className="closing-section__with-love" src={withLoveImg} alt="" aria-hidden="true" />
       <p className="closing-section__names">Вика и Илья</p>
     </section>
   )
